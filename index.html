@@ -1,8 +1,16 @@
 
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<title>Graduation Invitation</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Pacifico&family=Outfit:wght@300;400;500&display=swap');
 *{box-sizing:border-box;margin:0;padding:0;}
-.scene{width:100%;display:flex;flex-direction:column;align-items:stretch;background:transparent;}
+html{font-size:16px;-webkit-text-size-adjust:100%;}
+body{min-height:100vh;margin:0;font-family:'Outfit','Segoe UI',sans-serif;background:#f7f2e8;color:#2c1a0e;display:flex;justify-content:center;align-items:flex-start;padding:0 0 24px;}
+.scene{width:min(100%,560px);display:flex;flex-direction:column;align-items:stretch;background:transparent;padding:12px 12px 24px;}
 
 /* ENVELOPE */
 .env-stage{position:relative;width:100%;height:340px;cursor:pointer;user-select:none;flex-shrink:0;overflow:hidden;touch-action:manipulation;}
@@ -315,8 +323,49 @@
 .replay-btn.show{display:block;}
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+
+@media (max-width: 640px){
+  body{padding:0 0 16px;}
+  .scene{width:100%;padding:8px 8px 16px;}
+  .env-stage{height:300px;}
+  .env-address{top:16px;left:14px;}
+  .env-address-from{font-size:8px;}
+  .env-address-name{font-size:15px;}
+  .env-stamp{top:14px;right:68px;width:38px;height:50px;padding:2px;}
+  .env-stamp span{font-size:5px;}
+  .env-postmark{top:14px;right:14px;width:44px;height:44px;}
+  .env-postmark span{font-size:6px;}
+  .env-front-text{bottom:34px;}
+  .env-front-label{font-size:9px;margin-bottom:6px;}
+  .env-front-name{font-size:20px;}
+  .peek{left:4%;right:4%;bottom:10px;height:190px;}
+  .peek-hero{font-size:28px;}
+  .fc-header{padding:1.6rem 5% 1.2rem;}
+  .fc-body{padding:1.2rem 5%;}
+  .fc-grid{grid-template-columns:1fr;gap:8px;}
+  .fc-rsvp-btn{display:block;width:100%;padding:12px 18px;font-size:12px;}
+  .fc-footer{flex-direction:column;gap:6px;padding:1rem 5%;text-align:center;}
+  .fc-footer-diamond{display:none;}
+  .fc-party{padding:1.2rem 1rem;}
+  .fc-party-label{font-size:8px;padding:0 10px;}
+  .fc-party-name{font-size:22px;}
+  .fc-party-detail{font-size:13px;}
+}
+
+@media (max-width: 480px){
+  .env-stage{height:280px;}
+  .env-address-name{font-size:14px;}
+  .env-front-name{font-size:18px;}
+  .peek{height:170px;}
+  .peek-hero{font-size:24px;}
+  .fc-hero{font-size:38px;}
+  .fc-hero-sub{font-size:18px;}
+  .fc-pill{font-size:10px;padding:6px 16px;}
+  .fc-message{font-size:13px;line-height:1.8;}
+}
 </style>
 
+<body>
 <h2 class="sr-only">Animated full-width graduation envelope invitation for Cindy's graduation. Tap to open and reveal the letter.</h2>
 
 <div class="scene">
@@ -485,3 +534,5 @@ function resetEnv(){
   document.getElementById('hint').style.display='block';
 }
 </script>
+</body>
+</html>
